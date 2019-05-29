@@ -24,4 +24,3 @@ gcloud functions deploy ${FUNCTION} \
     --set-env-vars SLACK_API_TOKEN=${SLACK_API_TOKEN},SLACK_CHANNEL=${SLACK_CHANNEL} \
     --trigger-event google.pubsub.topic.publish \
     --trigger-resource ${TOPIC}
-

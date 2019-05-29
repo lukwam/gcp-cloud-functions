@@ -4,8 +4,7 @@ import base64
 import datetime
 import json
 import os
-
-from slackclient import SlackClient
+import slackclient
 
 
 SLACK_API_TOKEN = os.environ.get('SLACK_API_TOKEN')
@@ -63,7 +62,7 @@ def _notify_slack(notification):
         url,
     )
 
-    sc = SlackClient(SLACK_API_TOKEN)
+    sc = slackclient.SlackClient(SLACK_API_TOKEN)
 
     sc.api_call(
         "chat.postMessage",
